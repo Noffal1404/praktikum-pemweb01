@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Order Form</title>
+  </head>
+  <body style="font-family: Arial; max-width: 400px; margin: 20px auto">
+    <h2>Order Form</h2>
+
+    <label
+      ><strong>Name</strong><br />
+      <input type="text" placeholder="John Doe" style="width: 100%; padding: 6px; margin-top: 4px" /> </label
+    ><br /><br />
+
+    <label
+      ><strong>Email</strong><br />
+      <input type="email" placeholder="john.doe@example.com" style="width: 100%; padding: 6px; margin-top: 4px" /> </label
+    ><br /><br />
+
+    <label
+      ><strong>Phone</strong><br />
+      <input type="tel" placeholder="+1 (555) 123-4567" style="width: 100%; padding: 6px; margin-top: 4px" /> </label
+    ><br /><br />
+
+    <h3>Order Details</h3>
+
+    <label
+      >Product<br />
+      <select style="width: 100%; padding: 6px; margin-top: 4px">
+        <option>Select a product</option>
+        <option>T-Shirt</option>
+        <option>Jacket</option>
+        <option>Hat</option>
+      </select> </label
+    ><br /><br />
+
+    <label
+      >Quantity<br />
+      <input type="number" value="1" min="1" style="width: 60px; padding: 4px; margin-top: 4px" /> </label
+    ><br /><br />
+
+    <div>
+      <strong>Size</strong><br />
+      <label><input type="checkbox" /> Small</label><br />
+      <label><input type="checkbox" /> Medium</label><br />
+      <label><input type="checkbox" /> Large</label><br />
+      <label><input type="checkbox" /> XL</label>
+    </div>
+    <br />
+
+    <div>
+      <strong>Color</strong><br />
+      <label><input type="checkbox" /> Red</label><br />
+      <label><input type="checkbox" /> Green</label><br />
+      <label><input type="checkbox" /> Blue</label><br />
+      <label><input type="checkbox" /> Black</label>
+    </div>
+    <br />
+
+    <label
+      ><b>Additional Comments</b><br />
+      <textarea placeholder="Enter any additional comments or instructions" style="width: 100%; padding: 6px; margin-top: 4px; height: 60px"></textarea></label
+    ><br /><br />
+
+    <h3>Payment Details</h3>
+
+    <label
+      ><b>Payment Method</b><br />
+      <select style="width: 100%; padding: 6px; margin-top: 4px">
+        <option>Select a payment method</option>
+        <option>Credit Card</option>
+        <option>PayPal</option>
+        <option>Bank Transfer</option>
+      </select> </label
+    ><br /><br />
+
+    <label><input type="checkbox" /> I accept the terms and conditions.</label><br /><br />
+
+    <button style="width: 100%; padding: 10px; background: black; color: white; border: none">Submit Order</button>
+  </body>
+</html>

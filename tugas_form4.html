@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Membership Registration Form</title>
+  </head>
+  <body style="margin: auto; margin-left: 33%">
+    <div>
+      <h1><b>Membership Registration Form</b></h1>
+      <p>Please fill out the form below to become a member</p>
+      <form action="">
+        <!-- first & last name -->
+        <label for="first" style="margin-right: 22%"><b>First Name</b></label>
+        <label for="last"><b>Last Name</b></label
+        ><br />
+        <input type="text" style="margin-right: 11%" name="first" placeholder="Input your first name" />
+        <input type="text" name="last" placeholder="Input your last name" /><br /><br />
+        <!-- email -->
+        <label for="email"><b>Email</b></label
+        ><br />
+        <input type="email" style="width: 44%" name="email" placeholder="email@gmail.com" />
+        <br /><br />
+        <!-- no tlp -->
+        <label for="notlp"><b>Phone Number</b></label>
+        <br />
+        <input type="tel" name="notelp" style="width: 44%" id="notlp" placeholder="Input you number phone" /><br /><br />
+        <!-- tgl lahir -->
+        <label for="lahir"><b>Date of Birth</b></label
+        ><br />
+        <input style="width: 44%; height: 27px" type="date" name="lahir" id="lahir" />
+        <br /><br />
+        <!-- volentir -->
+        <label for="country"><b>Preferred Volunteer Role</b></label
+        ><br />
+        <select name="country" id="country" style="width: 44%; height: 27px; margin-right: 24px">
+          <option value="">Select your preferred volunteer role</option>
+          <option value="">Indonesia</option>
+          <option value="">Jepang</option>
+          <option value="">Russia</option></select
+        ><br />
+        <h2><b>Availability</b></h2>
+        <label for="">Days Available</label>
+        <small>select the days you are available to volunteer</small><br />
+        <input type="checkbox" name="monday" />
+        <label for="monday" style="margin-right: 50px">Monday</label>
+        <input type="checkbox" name="tuesday" />
+        <label for="tuesday">Tuesday</label><br />
+        <input type="checkbox" name="wednesday" />
+        <label for="wednesday" style="margin-right: 25px">Wednesday</label>
+        <input type="checkbox" name="thursday" />
+        <label for="thursday">Thursday</label><br />
+        <input type="checkbox" name="friday" />
+        <label for="friday" style="margin-right: 55px">Friday</label>
+        <input type="checkbox" name="saturday" />
+        <label for="saturday">Saturday</label><br /><br />
+        <!-- start time -->
+        <label for="first" style="margin-right: 122px"><b>Available Start Time</b></label>
+        <label for="last"><b>Avaiilable End Time</b></label
+        ><br />
+        <input type="text" style="margin-right: 11%" name="first" placeholder="09:00" />
+        <input type="text" name="last" placeholder="17:00" /><br /><br />
+        <!-- interests -->
+        <h2><b>Interests</b></h2>
+        <label for="">Skill and Experiece</label><br /><br />
+        <textarea name="" id="" style="width: 50%; height: 20%" placeholder="Enter your Skill and Experience"></textarea><br />
+        <!-- done -->
+        <input type="checkbox" />
+        <label for="">I agree to the terms and conditions</label><br /><br />
+        <input type="submit" name="" id="" value="Submit Registration" style="background-color: rgb(75, 52, 207); color: white" />
+      </form>
+    </div>
+  </body>
+</html>
