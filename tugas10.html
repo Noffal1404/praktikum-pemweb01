@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Tugas JavaScript & jQuery</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <style>
+      body {
+        font-family: Arial;
+        padding: 20px;
+        background: #f4f6f9;
+      }
+      h2 {
+        margin-top: 40px;
+        color: #333;
+      }
+      #biodata,
+      #todo,
+      #faq,
+      #slideshow,
+      #notif {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .faq-item {
+        margin-bottom: 10px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+      }
+      .answer {
+        display: none;
+      }
+      #slideshow img {
+        width: 300px;
+        height: 200px;
+        display: none;
+        border-radius: 10px;
+      }
+      button {
+        margin: 5px;
+        padding: 8px 12px;
+        border: 0;
+        border-radius: 6px;
+        background: #3498db;
+        color: white;
+        cursor: pointer;
+      }
+      button:hover {
+        opacity: 0.8;
+      }
+      #notifBox {
+        width: 250px;
+        padding: 15px;
+        background: #ffeb3b;
+        display: none;
+        border-radius: 8px;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Tugas JavaScript Advanced</h1>
+
+    <!-- Tugas 1 -->
+    <h2>Tugas 1 – Biodata Dinamis</h2>
+    <div id="biodata">
+      <p id="nama">Nama: Noffal Anggi Nugroho</p>
+      <p id="nim">NIM: 123456789</p>
+      <p id="prodi">Program Studi: Sistem Informasi</p>
+      <img id="foto" src="https://via.placeholder.com/120" width="120" style="border-radius: 10px" />
+      <br /><br />
+      <button onclick="ubahNama()">Ubah Nama</button>
+      <button onclick="ubahProdi()">Ubah Program Studi</button>
+      <button onclick="gantiFoto()">Ganti Foto</button>
+      <button onclick="document.getElementById('biodata').style.display='none'">Sembunyikan Biodata</button>
+      <button onclick="document.getElementById('biodata').style.display='block'">Tampilkan Biodata</button>
+    </div>
+
+    <script>
+      function ubahNama() {
+        let namaBaru = prompt("Masukkan nama baru:");
+        if (namaBaru) document.getElementById("nama").innerHTML = "Nama: " + namaBaru;
+      }
+      function ubahProdi() {
+        let prodiBaru = prompt("Masukkan program studi baru:");
+        if (prodiBaru) document.getElementById("prodi").innerHTML = "Program Studi: " + prodiBaru;
+      }
+      let fotoIndex = 1;
+      function gantiFoto() {
+        fotoIndex++;
+        if (fotoIndex > 3) fotoIndex = 1;
+        document.getElementById("foto").setAttribute("src", "img/" + fotoIndex + ".jpg");
+      }
+    </script>
+
+    <!-- Tugas 2 -->
+    <h2>Tugas 2 – To‑Do List</h2>
+    <div id="todo">
+      <input type="text" id="todoInput" placeholder="Tambahkan tugas..." />
+      <button onclick="tambahTodo()">Tambah</button>
+      <button onclick="hapusTerakhir()">Hapus Terakhir</button>
+      <ul id="todoList"></ul>
+    </div>
+
+    <script>
+      function tambahTodo() {
+        let teks = document.getElementById("todoInput").value;
+        if (teks) {
+          let li = document.createElement("li");
+          li.innerHTML = teks;
+          document.getElementById("todoList").appendChild(li);
+          document.getElementById("todoInput").value = "";
+        }
+      }
+      function hapusTerakhir() {
+        let list = document.getElementById("todoList");
+        if (list.lastChild) list.removeChild(list.lastChild);
+      }
+    </script>
+
+    <!-- Tugas 3 -->
+    <h2>Tugas 3 – FAQ jQuery</h2>
+    <div id="faq">
+      <div class="faq-item">
+        <b class="q">Apa itu HTML?</b>
+        <p class="answer">HTML adalah struktur dasar website.</p>
+      </div>
+      <div class="faq-item">
+        <b class="q">Apa itu CSS?</b>
+        <p class="answer">CSS digunakan untuk styling.</p>
+      </div>
+      <div class="faq-item">
+        <b class="q">Apa itu JavaScript?</b>
+        <p class="answer">JS membuat website interaktif.</p>
+      </div>
+      <div class="faq-item">
+        <b class="q">Apa itu jQuery?</b>
+        <p class="answer">jQuery adalah library JavaScript.</p>
+      </div>
+      <div class="faq-item">
+        <b class="q">Apa itu DOM?</b>
+        <p class="answer">DOM adalah representasi objek dari halaman HTML.</p>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function(){
+          $(".q").click(function(){
+              $(this).parent().find(".answer").toggle();
+          });
+          });
+          });
+          $(".faq-item").hover(
+              function(){ $(this).css("background","#e3f2fd"); },
+              function(){ $(this).css("background","white"); }
+          );
+      });
+    </script>
+
+    <!-- Tugas 4 -->
+    <h2>Tugas 4 – Slideshow jQuery</h2>
+    <div id="slideshow">
+      <img src="img/1.jpg" class="slide" />
+      <img src="img/2.jpg" class="slide" />
+      <img src="img/3.jpg" class="slide" />
+      <br />
+      <button id="prev">Prev</button>
+      <button id="next">Next</button>
+    </div>
+
+    <script>
+      let index = 0;
+      $(".slide").eq(index).show();
+
+      $("#next").click(function () {
+        $(".slide").eq(index).fadeOut();
+        index = (index + 1) % $(".slide").length;
+        $(".slide").eq(index).fadeIn();
+      });
+
+      $("#prev").click(function () {
+        $(".slide").eq(index).fadeOut();
+        index = (index - 1 + $(".slide").length) % $(".slide").length;
+        $(".slide").eq(index).fadeIn();
+      });
+    </script>
+
+    <!-- Tugas 5 -->
+    <h2>Tugas 5 – Notifikasi Chaining</h2>
+    <button id="showNotif">Tampilkan Notifikasi</button>
+    <div id="notifBox">Ini notifikasi penting!</div>
+
+    <script>
+      $("#showNotif").click(function () {
+        $("#notifBox").css("background", "#ffcc00").fadeIn(500).slideDown(500).delay(3000).slideUp(500).fadeOut(500);
+      });
+    </script>
+  </body>
+</html>
